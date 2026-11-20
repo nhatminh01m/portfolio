@@ -1,0 +1,282 @@
+/* ==========================================================
+   FILE CSS - PORTFOLIO NHẬT MINH
+   Đặt tên class theo BEM:  khối__phần--biến-thể
+   Ví dụ: card (khối), card__title (phần), tags__item--green (biến thể)
+   ========================================================== */
+
+/* ----- Biến màu: sửa ở đây là đổi màu cả trang ----- */
+:root {
+  --main-color: #2563eb;    /* xanh dương chính */
+  --dark-color: #0f2a5c;    /* xanh đậm cho cột trái */
+  --light-color: #eff6ff;   /* xanh rất nhạt làm nền thẻ */
+  --text-color: #334155;    /* màu chữ thường */
+}
+
+/* ----- Thiết lập chung ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;   /* padding, border tính vào chiều rộng */
+}
+
+html {
+  scroll-behavior: smooth;  /* cuộn mượt khi bấm menu */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* ----- Bố cục 2 cột bằng Flexbox ----- */
+.layout {
+  display: flex;            /* xếp sidebar và content nằm ngang */
+}
+
+/* ----- Cột trái ----- */
+.sidebar {
+  width: 300px;
+  height: 100vh;            /* cao bằng màn hình */
+  position: sticky;         /* đứng yên khi cuộn nội dung bên phải */
+  top: 0;
+  flex-shrink: 0;           /* không bị bóp nhỏ lại */
+  background-color: var(--dark-color);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+/* Ảnh đại diện hình tròn */
+.sidebar__avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  border-radius: 50%;       /* bo tròn 50% = hình tròn */
+  background-color: var(--main-color);
+  border: 4px solid white;
+  font-size: 52px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;        /* dùng khi thay bằng thẻ img */
+}
+
+.sidebar__name {
+  font-size: 22px;
+}
+
+.sidebar__job {
+  color: #bfdbfe;
+  margin-bottom: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;   /* xếp các link theo chiều dọc */
+  margin-bottom: 20px;
+}
+
+.menu__link {
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.menu__link:hover {
+  background-color: var(--main-color);
+}
+
+.sidebar__contact {
+  font-size: 14px;
+  color: #bfdbfe;
+  margin-bottom: 15px;
+}
+
+.sidebar__social a {
+  color: white;
+  margin: 0 8px;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* ----- Cột phải ----- */
+.content {
+  flex: 1;                  /* chiếm hết phần còn lại */
+  padding: 0 50px;
+  max-width: 900px;
+}
+
+.section {
+  padding: 50px 0 20px;
+}
+
+.section__title {
+  font-size: 28px;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--main-color);
+  display: inline-block;    /* gạch chân chỉ dài bằng chữ */
+}
+
+.section__sub {
+  font-size: 18px;
+  margin: 15px 0 10px;
+}
+
+.section__text {
+  margin-bottom: 10px;
+}
+
+/* ----- Thẻ (sở thích, dự án) ----- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;          /* hết chỗ thì xuống dòng */
+  gap: 20px;
+}
+
+.card {
+  flex: 1;                  /* các thẻ chia đều chiều rộng */
+  min-width: 220px;         /* nhỏ nhất 220px, nhỏ hơn thì xuống dòng */
+  background-color: var(--light-color);
+  border-left: 5px solid var(--main-color);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+/* Ảnh trong thẻ: rộng bằng thẻ, cao cố định, cắt ảnh cho vừa khung */
+.card__image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.card__title {
+  font-size: 18px;
+  color: var(--dark-color);
+  margin-bottom: 6px;
+}
+
+.card__tag {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+/* ----- Thẻ nhỏ cho kỹ năng ----- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags__item {
+  background-color: var(--main-color);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.tags__item--green {
+  background-color: #059669;
+}
+
+/* ----- Học vấn ----- */
+.edu {
+  border-left: 3px solid var(--main-color);
+  padding-left: 18px;
+}
+
+.edu__time {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.edu__name {
+  font-size: 20px;
+  color: var(--dark-color);
+}
+
+/* ----- Nút và biểu mẫu ----- */
+.btn {
+  padding: 11px 26px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--dark-color);
+}
+
+.form {
+  max-width: 480px;
+}
+
+.form__label {
+  display: block;
+  margin: 14px 0 5px;
+  font-weight: bold;
+}
+
+.form__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.form__input:focus {
+  outline: 2px solid var(--main-color);
+}
+
+.form .btn {
+  margin-top: 18px;
+}
+
+/* ----- Footer ----- */
+.footer {
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ----- Responsive: màn hình dưới 800px (điện thoại, máy tính bảng) ----- */
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column; /* cột trái chuyển lên trên, nội dung xuống dưới */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;       /* bỏ trạng thái đứng yên */
+  }
+
+  .menu {
+    flex-direction: row;    /* menu xếp ngang */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+}

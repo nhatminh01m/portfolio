@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <!-- Giúp trang hiển thị đúng kích thước trên điện thoại -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Nguyễn Đình Nhật Minh</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Trang chia 2 cột: .sidebar (cột trái, thông tin cá nhân) và .content (cột phải, nội dung chính) -->
+  <div class="layout">
+
+    <!-- ========== CỘT TRÁI: THÔNG TIN CÁ NHÂN ========== -->
+    <aside class="sidebar">
+      <!-- Ảnh đại diện: muốn dùng ảnh thật thì thay div này bằng <img class="sidebar__avatar" src="anh.jpg" alt="Ảnh Nhật Minh"> -->
+     <img class="sidebar__avatar" src="images/avatar.jpg" alt="Ảnh Nguyễn Đình Nhật Minh">
+      <h1 class="sidebar__name">Nguyễn Đình Nhật Minh</h1>
+      <p class="sidebar__job">Sinh viên Công nghệ thông tin</p>
+
+      <!-- Menu: bấm vào sẽ cuộn tới phần có id tương ứng -->
+      <nav class="menu">
+        <a href="#about" class="menu__link">Giới thiệu</a>
+        <a href="#hobby" class="menu__link">Sở thích</a>
+        <a href="#skills" class="menu__link">Kỹ năng</a>
+        <a href="#projects" class="menu__link">Dự án</a>
+        <a href="#education" class="menu__link">Học vấn</a>
+        <a href="#contact" class="menu__link">Liên hệ</a>
+      </nav>
+
+      <ul class="sidebar__contact">
+        <li>minhtjn01@gmail.com</li>
+        <li>0342 240 xxx</li>
+      </ul>
+
+      <div class="sidebar__social">
+        <a href="https://github.com/nhatminh01m" target="_blank">GitHub</a>
+        <a href="https://facebook.com/" target="_blank">Facebook</a>
+      </div>
+    </aside>
+
+    <!-- ========== CỘT PHẢI: NỘI DUNG ========== -->
+    <main class="content">
+
+      <!-- 1. Giới thiệu -->
+      <section class="section" id="about">
+        <h2 class="section__title">Giới thiệu bản thân</h2>
+        <p class="section__text">
+          Xin chào, mình là Nguyễn Đình Nhật Minh, sinh viên năm 2 ngành Công nghệ thông tin,
+          lớp 66K2, Trường Đại học Vinh. Mình đang học lập trình web và lập trình C/C++,
+          mong muốn trở thành lập trình viên Front-end trong tương lai.
+        </p>
+        <p class="section__text">
+          Ngoài giờ học, mình thích chơi thể thao để giữ sức khỏe và tinh thần thoải mái.
+          Mình tin rằng học lập trình cũng như tập luyện: cần kiên trì và làm mỗi ngày một ít.
+        </p>
+      </section>
+
+      <!-- 2. Sở thích -->
+      <section class="section" id="hobby">
+        <h2 class="section__title">Sở thích</h2>
+        <div class="cards">
+          <div class="card">
+            <img class="card__image" src="images/da-bong.jpg" alt="Nhật Minh đá bóng cùng bạn bè">
+            <h3 class="card__title">Đá bóng</h3>
+            <p class="card__text">Mình thường đá bóng cùng bạn bè. Môn này giúp mình rèn tinh thần đồng đội và biết phối hợp với người khác, rất cần khi làm đồ án nhóm.</p>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/tap-gym.jpg" alt="Nhật Minh tập gym">
+            <h3 class="card__title">Tập gym</h3>
+            <p class="card__text">Tập gym giúp mình giữ sức khỏe và rèn tính kiên trì. Tập đều mỗi ngày giống như luyện code, tiến bộ từng chút một.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Kỹ năng -->
+      <section class="section" id="skills">
+        <h2 class="section__title">Kỹ năng</h2>
+        <h3 class="section__sub">Lập trình và công cụ</h3>
+        <ul class="tags">
+          <li class="tags__item">HTML5</li>
+          <li class="tags__item">CSS3</li>
+          <li class="tags__item">C</li>
+          <li class="tags__item">C++</li>
+          <li class="tags__item">Git / GitHub</li>
+          <li class="tags__item">VS Code</li>
+        </ul>
+        <h3 class="section__sub">Kỹ năng mềm</h3>
+        <ul class="tags">
+          <li class="tags__item tags__item--green">Làm việc nhóm</li>
+          <li class="tags__item tags__item--green">Kiên trì</li>
+          <li class="tags__item tags__item--green">Tự học</li>
+        </ul>
+      </section>
+
+      <!-- 4. Dự án -->
+      <section class="section" id="projects">
+        <h2 class="section__title">Dự án</h2>
+        <div class="cards">
+          <div class="card">
+            <img class="card__image" src="images/du-an-1.jpg" alt="Giao diện dự án Quản lý sinh viên">
+            <h3 class="card__title">Quản lý sinh viên</h3>
+            <p class="card__text">Chương trình C++ thêm, xóa, tìm kiếm sinh viên, lưu dữ liệu vào file.</p>
+            <p class="card__tag">C++, OOP</p>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/du-an-2.jpg" alt="Giao diện trang Portfolio cá nhân">
+            <h3 class="card__title">Portfolio cá nhân</h3>
+            <p class="card__text">Website giới thiệu bản thân, kỹ năng và dự án (chính là trang này).</p>
+            <p class="card__tag">HTML, CSS</p>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/du-an-3.jpg" alt="Kết quả bài tập cấu trúc dữ liệu">
+            <h3 class="card__title">Bài tập cấu trúc dữ liệu</h3>
+            <p class="card__text">Cài đặt danh sách liên kết, ngăn xếp và hàng đợi bằng C++.</p>
+            <p class="card__tag">C++, DSA</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Học vấn -->
+      <section class="section" id="education">
+        <h2 class="section__title">Học vấn</h2>
+        <div class="edu">
+          <p class="edu__time">2025 - nay</p>
+          <h3 class="edu__name">Trường Đại học Vinh</h3>
+          <p class="section__text">Ngành Công nghệ thông tin, lớp 66K2. Các môn đang học: Lập trình web, Lập trình hướng đối tượng, Cấu trúc dữ liệu.</p>
+        </div>
+      </section>
+
+      <!-- 6. Liên hệ -->
+      <section class="section" id="contact">
+        <h2 class="section__title">Liên hệ</h2>
+        <form class="form" action="#" method="post">
+          <label class="form__label" for="name">Họ và tên</label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+
+          <label class="form__label" for="email">Email</label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="Nhập email" required>
+
+          <label class="form__label" for="message">Nội dung</label>
+          <textarea class="form__input" id="message" name="message" rows="4" placeholder="Bạn muốn nhắn gì?" required></textarea>
+
+          <button class="btn" type="submit">Gửi tin nhắn</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2026 Nguyễn Đình Nhật Minh - Đồ án cá nhân</p>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
