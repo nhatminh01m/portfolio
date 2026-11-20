@@ -2,25 +2,20 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <!-- Giúp trang hiển thị đúng kích thước trên điện thoại -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Nguyễn Đình Nhật Minh</title>
-  <!-- Liên kết file CSS -->
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Trang chia 2 cột: .sidebar (cột trái, thông tin cá nhân) và .content (cột phải, nội dung chính) -->
   <div class="layout">
 
-    <!-- ========== CỘT TRÁI: THÔNG TIN CÁ NHÂN ========== -->
     <aside class="sidebar">
-      <!-- Ảnh đại diện: muốn dùng ảnh thật thì thay div này bằng <img class="sidebar__avatar" src="anh.jpg" alt="Ảnh Nhật Minh"> -->
      <img class="sidebar__avatar" src="images/avatar.jpg" alt="Ảnh Nguyễn Đình Nhật Minh">
       <h1 class="sidebar__name">Nguyễn Đình Nhật Minh</h1>
       <p class="sidebar__job">Sinh viên Công nghệ thông tin</p>
 
-      <!-- Menu: bấm vào sẽ cuộn tới phần có id tương ứng -->
       <nav class="menu">
         <a href="#about" class="menu__link">Giới thiệu</a>
         <a href="#hobby" class="menu__link">Sở thích</a>
@@ -41,10 +36,8 @@
       </div>
     </aside>
 
-    <!-- ========== CỘT PHẢI: NỘI DUNG ========== -->
     <main class="content">
 
-      <!-- 1. Giới thiệu -->
       <section class="section" id="about">
         <h2 class="section__title">Giới thiệu bản thân</h2>
         <p class="section__text">
@@ -58,7 +51,6 @@
         </p>
       </section>
 
-      <!-- 2. Sở thích -->
       <section class="section" id="hobby">
         <h2 class="section__title">Sở thích</h2>
         <div class="cards">
@@ -75,7 +67,6 @@
         </div>
       </section>
 
-      <!-- 3. Kỹ năng -->
       <section class="section" id="skills">
         <h2 class="section__title">Kỹ năng</h2>
         <h3 class="section__sub">Lập trình và công cụ</h3>
@@ -95,7 +86,6 @@
         </ul>
       </section>
 
-      <!-- 4. Dự án -->
       <section class="section" id="projects">
         <h2 class="section__title">Dự án</h2>
         <div class="cards">
@@ -120,7 +110,6 @@
         </div>
       </section>
 
-      <!-- 5. Học vấn -->
       <section class="section" id="education">
         <h2 class="section__title">Học vấn</h2>
         <div class="edu">
@@ -130,7 +119,6 @@
         </div>
       </section>
 
-      <!-- 6. Liên hệ -->
       <section class="section" id="contact">
         <h2 class="section__title">Liên hệ</h2>
         <form class="form" action="#" method="post">
