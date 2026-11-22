@@ -1,20 +1,26 @@
+/* ==========================================================
+   FILE CSS - PORTFOLIO NHẬT MINH
+   Đặt tên class theo BEM:  khối__phần--biến-thể
+   Ví dụ: card (khối), card__title (phần), tags__item--green (biến thể)
+   ========================================================== */
 
+/* ----- Biến màu: sửa ở đây là đổi màu cả trang ----- */
 :root {
-  --main-color: #2563eb;    
-  --dark-color: #0f2a5c;    
-  --light-color: #eff6ff;   
-  --text-color: #334155;    
+  --main-color: #295ac2;    /* xanh dương chính */
+  --dark-color: #0f2a5c;    /* xanh đậm cho cột trái */
+  --light-color: #eff6ff;   /* xanh rất nhạt làm nền thẻ */
+  --text-color: #334155;    /* màu chữ thường */
 }
 
-
+/* ----- Thiết lập chung ----- */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;   
+  box-sizing: border-box;   /* padding, border tính vào chiều rộng */
 }
 
 html {
-  scroll-behavior: smooth;  
+  scroll-behavior: smooth;  /* cuộn mượt khi bấm menu */
 }
 
 body {
@@ -26,18 +32,18 @@ body {
 a { text-decoration: none; }
 ul { list-style: none; }
 
-
+/* ----- Bố cục 2 cột bằng Flexbox ----- */
 .layout {
-  display: flex;           
+  display: flex;            /* xếp sidebar và content nằm ngang */
 }
 
-
+/* ----- Cột trái ----- */
 .sidebar {
   width: 300px;
-  height: 100vh;            
-  position: sticky;         
+  height: 100vh;            /* cao bằng màn hình */
+  position: sticky;         /* đứng yên khi cuộn nội dung bên phải */
   top: 0;
-  flex-shrink: 0;          
+  flex-shrink: 0;           /* không bị bóp nhỏ lại */
   background-color: var(--dark-color);
   color: white;
   padding: 30px 20px;
@@ -45,12 +51,12 @@ ul { list-style: none; }
   overflow-y: auto;
 }
 
-
+/* Ảnh đại diện hình tròn */
 .sidebar__avatar {
   width: 120px;
   height: 120px;
   margin: 0 auto 15px;
-  border-radius: 50%;       
+  border-radius: 50%;       /* bo tròn 50% = hình tròn */
   background-color: var(--main-color);
   border: 4px solid white;
   font-size: 52px;
@@ -58,7 +64,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  object-fit: cover;        
+  object-fit: cover;        /* dùng khi thay bằng thẻ img */
 }
 
 .sidebar__name {
@@ -72,7 +78,7 @@ ul { list-style: none; }
 
 .menu {
   display: flex;
-  flex-direction: column;   
+  flex-direction: column;   /* xếp các link theo chiều dọc */
   margin-bottom: 20px;
 }
 
@@ -99,9 +105,10 @@ ul { list-style: none; }
   text-decoration: underline;
 }
 
-
+/* ----- Cột phải ----- */
 .content {
-  flex: 1;                 
+  flex: 1;                  /* chiếm hết phần còn lại */
+  padding: 0 50px;
   max-width: 900px;
 }
 
@@ -115,7 +122,7 @@ ul { list-style: none; }
   margin-bottom: 15px;
   padding-bottom: 8px;
   border-bottom: 3px solid var(--main-color);
-  display: inline-block;   
+  display: inline-block;    /* gạch chân chỉ dài bằng chữ */
 }
 
 .section__sub {
@@ -127,23 +134,23 @@ ul { list-style: none; }
   margin-bottom: 10px;
 }
 
-
+/* ----- Thẻ (sở thích, dự án) ----- */
 .cards {
   display: flex;
-  flex-wrap: wrap;         
+  flex-wrap: wrap;          /* hết chỗ thì xuống dòng */
   gap: 20px;
 }
 
 .card {
-  flex: 1;                 
-  min-width: 220px;        
+  flex: 1;                  /* các thẻ chia đều chiều rộng */
+  min-width: 220px;         /* nhỏ nhất 220px, nhỏ hơn thì xuống dòng */
   background-color: var(--light-color);
   border-left: 5px solid var(--main-color);
   border-radius: 6px;
   padding: 18px;
 }
 
-
+/* Ảnh trong thẻ: rộng bằng thẻ, cao cố định, cắt ảnh cho vừa khung */
 .card__image {
   width: 100%;
   height: 160px;
@@ -165,7 +172,7 @@ ul { list-style: none; }
   color: var(--main-color);
 }
 
-
+/* ----- Thẻ nhỏ cho kỹ năng ----- */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -184,7 +191,7 @@ ul { list-style: none; }
   background-color: #059669;
 }
 
-
+/* ----- Học vấn ----- */
 .edu {
   border-left: 3px solid var(--main-color);
   padding-left: 18px;
@@ -200,7 +207,7 @@ ul { list-style: none; }
   color: var(--dark-color);
 }
 
-
+/* ----- Nút và biểu mẫu ----- */
 .btn {
   padding: 11px 26px;
   background-color: var(--main-color);
@@ -242,7 +249,7 @@ ul { list-style: none; }
   margin-top: 18px;
 }
 
-
+/* ----- Footer ----- */
 .footer {
   margin-top: 50px;
   padding: 20px 0;
@@ -251,20 +258,20 @@ ul { list-style: none; }
   font-size: 14px;
 }
 
-
+/* ----- Responsive: màn hình dưới 800px (điện thoại, máy tính bảng) ----- */
 @media (max-width: 800px) {
   .layout {
-    flex-direction: column; 
+    flex-direction: column; /* cột trái chuyển lên trên, nội dung xuống dưới */
   }
 
   .sidebar {
     width: 100%;
     height: auto;
-    position: static;      
+    position: static;       /* bỏ trạng thái đứng yên */
   }
 
   .menu {
-    flex-direction: row;   
+    flex-direction: row;    /* menu xếp ngang */
     flex-wrap: wrap;
     justify-content: center;
   }
